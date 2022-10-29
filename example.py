@@ -31,6 +31,7 @@ def generate_rsa_key_pair(nBits):
 def retrieve_prime_factors(n, e, d):
     p, q = prime_recovery(n, e, d)
     return p, q
+    
 
 if __name__ == "__main__":
     print (generate(2048, 65537))

@@ -18,8 +18,7 @@ class GeneratePrimeNumber():
             if self.p >= isqrt(2)*(pow(2, self.pBits-1)):
                 if gcd(self.p-1, self.e) == 1:
                     candidate = self.miller_rabin(5)
-            self.i += 1
-
+                    self.i += 1
         return self.p
 
 

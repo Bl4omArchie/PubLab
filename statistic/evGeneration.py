@@ -7,18 +7,12 @@ import time
 """
 How to evaluare the efficiency of a key-pair generator ?
 
-1) First we have some simple test about the given bit key size and the public exponent e
-2) Then we generate a random prime number twice (p and q)
-    | 1) we check if the number is odd and if the number is co-prime with the public exponent
-    | 2) we make the miller-rabin test
-    | 3) we repeat the operation many time as we need
-
-3) we compute d, phi and the public key N
-4) pair wise consistency test
-
-
+1) we check if the number is odd and if the number is co-prime with the public exponent
+2) we make the miller-rabin test
+3) we repeat the operation many time as we need
 
 """
+
 def generation_time(n, nBits):
     x = []
     y = []
@@ -33,21 +27,32 @@ def generation_time(n, nBits):
     plt.show()
 
 
-def prime_number_evaluation(n, nBits):
+def prime_number_evaluation(n, pBits):
     x = []
     y = []
-    pBits = nBits//2
 
-    obj = GeneratePrimeNumber(1024, 65537)
+    obj = GeneratePrimeNumber(pBits, 65537)
 
     for z in range(1, n+1):
-        p, i = obj.get_prime_factor(pBits, 65537)
-        y.append(i)
+        obj.get_prime_factor()
+        y.append(obj.i)
         x.append(z)
 
     plt.plot(x, y)
     plt.show()
 
 
-if __name__ == "__main__":
-    prime_number_evaluation(10, 2048)
+def prime_number_evaluation_with_time(n, pBits):
+    x = []
+    y = []
+
+    obj = GeneratePrimeNumber(pBits, 65537)
+
+    for _ in range(1, n+1):
+        start_time = time.time()
+        obj.get_prime_factor()
+        y.append(time.time() - start_time)
+        x.append(obj.i)
+
+    plt.plot(x, y)
+    plt.show()

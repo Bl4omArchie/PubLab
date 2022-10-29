@@ -1,0 +1,3 @@
+https://ghenshaw-work.medium.com/finding-large-primes-for-public-key-cryptography-9c5a5c0d32c4
+
+https://en.wikipedia.org/wiki/Multiplication_algorithm

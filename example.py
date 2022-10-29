@@ -1,6 +1,6 @@
-from pubcrypt.number.primality import *
 from pubcrypt.number.util import *
-from pubcrypt.modules.rsa import *
+from pubcrypt.rsa import *
+
 import time
 
 
@@ -33,4 +33,6 @@ def retrieve_prime_factors(n, e, d):
     return p, q
 
 if __name__ == "__main__":
-    generate_rsa_key_pair(2048)
+    print (generate(2048, 65537))
+    #print (get_prime_factor(1024, 65537))
+    #generate_rsa_key_pair(2048)

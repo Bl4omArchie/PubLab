@@ -42,6 +42,17 @@ def pair_wise_consistency_test(n, e, d):
     m = randrange(1, n//2)
     return m == pow(m, e*d, n)
 
+
+def square_multiply(x, h, n):
+    t = int_to_bin(h)
+    r = x
+
+    for i in range(len(t)-1):
+        r = (r**2) % n
+        if t[i] == "1":
+            r = (r*x) % n
+    return r
+
 def isqrt (x):
     """ Credit: https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X#Python """
     q = 1
@@ -69,6 +80,7 @@ def perfect_square(c):
 
     return c == pow(floor(x), 2)
 
+
 def RBG(nBits):
     return int_to_bytes(randrange(pow(2, nBits-1)+1, pow(2, nBits)-1))
 
@@ -79,4 +91,18 @@ def int_to_bytes(x: int) :
     return x.to_bytes((x.bit_length() + 7) // 8, 'big')
     
 def bytes_to_int(xbytes: bytes) :
-    return int.from_bytes(xbytes, 'big') 
+    return int.from_bytes(xbytes, 'big')
+
+def int_to_bin(n, iter="big"):
+    result = ""
+    while n > 0:
+        if n%2 == 0:
+            result += "0"
+        else:
+            result += "1"
+        n = n //2
+        
+    if iter == "little":
+        return result
+    else:
+        return result[::-1]

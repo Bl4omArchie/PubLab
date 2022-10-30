@@ -1,4 +1,5 @@
 from pubcrypt.number.util import *
+from random import randrange
 
 
 class GeneratePrimeNumber():
@@ -36,7 +37,7 @@ class GeneratePrimeNumber():
                 return 0
 
             for i in range(s):
-                if pow(a, 2**i * d, self.p) == self.p-1:
+                if pow(a, pow(2, i) * d, self.p) == self.p-1:
                     return 0
             return 1  
     

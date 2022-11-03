@@ -1,5 +1,6 @@
 from pubcrypt.number.primality import GeneratePrimeNumber
 from pubcrypt.number.util import *
+from random import randrange
 
 
 def generate(nBits, e=65537):
@@ -42,3 +43,7 @@ def prime_recovery(n, e, d):
 
     y = isqrt(pow_exp(b, 2)-4*n)
     return (b+y) // 2, (b-y) // 2
+
+def pair_wise_consistency_test(n, e, d):
+    m = randrange(1, n//2)
+    return m == primitive_exp(m, e*d, n)

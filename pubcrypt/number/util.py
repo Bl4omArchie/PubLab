@@ -1,4 +1,3 @@
-from pubcrypt.cryptosystem.rsa import primitive_exp
 from math import floor, log2, ceil
 from random import randrange
 
@@ -38,10 +37,6 @@ def gcd(x, y):
 
 def lcm(x, y):
     return (x*y) // gcd(x, y)
-
-def pair_wise_consistency_test(n, e, d):
-    m = randrange(1, n//2)
-    return m == primitive_exp(m, e*d, n)
 
 def pow_mod(x, y, z):
     number = 1

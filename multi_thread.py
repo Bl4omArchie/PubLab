@@ -1,4 +1,4 @@
-from time import perf_counter, sleep
+from time import perf_counter
 from contextlib import contextmanager
 from random import randint
 from multiprocessing import Process

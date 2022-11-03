@@ -1,5 +1,5 @@
 from pubcrypt.number.primality import *
-from pubcrypt.number.modexp import *
+from statistic.modular_exponentiation.modexp import *
 from pubcrypt.number.util import *
 from pubcrypt.rsa import *
 
@@ -17,7 +17,7 @@ def launch_test():
     except:
         ValueError("Test failed")
 
-        
+
 
 def generate_rsa_key_pair(nBits):
     n, e, d = generate(nBits)
@@ -29,5 +29,4 @@ def retrieve_prime_factors(n, e, d):
     
 
 if __name__ == "__main__":
-    #prime_generation_evaluation(5)
-    print (generate_rsa_key_pair(2048))
+    launch_test()

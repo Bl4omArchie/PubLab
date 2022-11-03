@@ -1,4 +1,5 @@
 from statistic.modular_exp import square_multiply_evaluation
+from statistic.prime import prime_generation_evaluation
 from pubcrypt.number.util import *
 from pubcrypt.rsa import *
 
@@ -14,4 +15,5 @@ def retrieve_prime_factors(n, e, d):
     
 
 if __name__ == "__main__":
-    square_multiply_evaluation(500)
+    #prime_generation_evaluation(5)
+    print (generate_rsa_key_pair(2048))

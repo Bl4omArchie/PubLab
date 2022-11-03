@@ -42,16 +42,23 @@ def pair_wise_consistency_test(n, e, d):
     m = randrange(1, n//2)
     return m == pow(m, e*d, n)
 
+def pow_mod(x, y, z):
+    number = 1
+    while y:
+        if y & 1:
+            number = number * x % z
+        y >>= 1
+        x = x * x % z
+    return number
 
-def square_multiply(x, h, n):
-    t = int_to_bin(h)
-    r = x
-
-    for i in range(len(t)-1):
-        r = (r**2) % n
-        if t[i] == "1":
-            r = (r*x) % n
-    return r
+def pow_exp(x, y):
+    number = 1
+    while y:
+        if y & 1:
+            number = number * x
+        y >>= 1
+        x = x * x
+    return number
 
 def isqrt (x):
     """ Credit: https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X#Python """

@@ -1,4 +1,4 @@
-from pubcrypt.rsa import primitive_exp
+from pubcrypt.cryptosystem.rsa import primitive_exp
 from math import floor, log2, ceil
 from random import randrange
 

@@ -1,3 +1,4 @@
+from pubcrypt.rsa import primitive_exp
 from math import floor, log2, ceil
 from random import randrange
 
@@ -40,7 +41,7 @@ def lcm(x, y):
 
 def pair_wise_consistency_test(n, e, d):
     m = randrange(1, n//2)
-    return m == pow(m, e*d, n)
+    return m == primitive_exp(m, e*d, n)
 
 def pow_mod(x, y, z):
     number = 1

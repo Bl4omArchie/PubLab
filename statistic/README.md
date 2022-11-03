@@ -1,6 +1,10 @@
-import matplotlib.pyplot as plt
-import time
+# Model
 
+There are the main model for our test
+
+
+## Benchmark:
+```py
 def benchmark():
     #we compare the speed of two function by repeating the function 1000 times
     start_time = time.time()
@@ -19,8 +23,11 @@ def benchmark():
 
     interval = time.time() - start_time
     print ('Total time in seconds:', interval)
+``` 
 
 
+## Normal ploting:
+``` py
 def normal_plot(nb):
     x = []  #1 curve
     y = []  #1 curve
@@ -39,8 +46,11 @@ def normal_plot(nb):
     plt.plot(x, y, color="green")
     plt.legend(loc="upper right", title="Legend", frameon=False)
     plt.show()
+``` 
 
 
+## Motion ploting:
+```py
 def motion_plot(nb):
     x = []
     y = []
@@ -61,3 +71,4 @@ def motion_plot(nb):
     #title and legend of the graph
     plt.legend(loc="upper right", title="Legend", frameon=False)
     plt.show()
+``` 

@@ -1,4 +1,3 @@
-from pubcrypt.number.modexp import pow_mod
 from pubcrypt.number.util import *
 from random import randrange
 

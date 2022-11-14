@@ -1,6 +1,7 @@
 # Model
 
-There are the main model for our test
+All the model I'm usinf for my test
+Basicly, you have publab which is about experiments of my librairy pubcrypt and pylab, test with multi-thread and multi-processor script in the purpose of improving my lib and my projets in general
 
 
 ## Benchmark:

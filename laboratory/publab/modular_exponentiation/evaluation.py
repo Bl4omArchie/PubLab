@@ -1,5 +1,5 @@
 from pubcrypt.number.util import int_to_bin
-from statistic.modular_exponentiation.modexp import *
+from laboratory.publab.modular_exponentiation.modexp import *
 
 import matplotlib.pyplot as plt
 from random import randrange
